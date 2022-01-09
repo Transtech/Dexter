@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-apply from: 'https://raw.githubusercontent.com/chrisbanes/gradle-mvn-push/97de89785bdbf0bc0b380fb60851cabc552811dc/gradle-mvn-push.gradle'
+apply from: 'https://raw.github.com/chrisbanes/gradle-mvn-push/master/gradle-mvn-push.gradle'
 
 android {
   compileSdkVersion 28
@@ -29,4 +29,11 @@ dependencies {
   implementation 'com.google.android.material:material:1.0.0'
   testImplementation 'junit:junit:4.12'
   testImplementation 'org.mockito:mockito-core:2.28.2'
+}
+
+task createJar(type: Copy) {
+  from('build/intermediates/bundles/release/')
+  into('libs/jars/')
+  include('classes.jar')
+  rename('classes.jar', 'logmanagementlib.jar')
 }
