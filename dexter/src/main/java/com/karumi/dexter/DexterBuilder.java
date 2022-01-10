@@ -27,6 +27,8 @@ public interface DexterBuilder {
 
   DexterBuilder withErrorListener(PermissionRequestErrorListener errorListener);
 
+  DexterBuilder forceShowingPermission();
+
   void check();
 
   interface Permission {

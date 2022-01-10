@@ -112,6 +112,12 @@ public final class Dexter
     }
   }
 
+  @Override
+  public DexterBuilder forceShowingPermission() {
+    instance.forceShowingPermission();
+    return this;
+  }
+
   private Thread getThread() {
     Thread thread;
 

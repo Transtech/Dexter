@@ -98,6 +98,10 @@ final class DexterInstance {
     checkMultiplePermissions(listener, permissions, thread);
   }
 
+  void forceShowingPermission() {
+    isRequestingPermission.set(false);
+  }
+
   /**
    * Method called whenever the inner activity has been created or restarted and is ready to be
    * used.
